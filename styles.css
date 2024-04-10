@@ -12,22 +12,25 @@
 body {
   font-family: 'Arial', sans-serif;
   color: #333;
-  background: var(--secondary-background);
   margin: 0;
+  background-color: var(--secondary-background);
+  background-image: url('./resources/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
 }
 
 header, footer {
-  background-color: var(--secondary-background);
   color: var(--primary-text);
-  padding: 20px 0;
+  padding-top: 8px;
   text-align: center;
-  border-bottom: 1px solid var(--primary-text);
 }
 
 nav ul {
@@ -53,14 +56,11 @@ nav a {
 }
 
 .main {
-  padding: 20px;
+  padding: 0 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-image: url('./resources/Encanto.png');
-  background-position: top;
-  background-size: cover;
 }
 
 .section {
@@ -69,17 +69,15 @@ nav a {
 
 .section.hero {
   max-width: 375px;
-  /* 
-  use img borders
   border-left: 1px solid var(--primary-text);
   border-right: 1px solid var(--primary-text); 
-  */
+  border-top: 1px solid var(--primary-text); 
   padding: 0 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: var(--secondary-background);
-  margin: 0 auto;
+  margin: 2px auto 0 auto;
 }
 
 
@@ -154,9 +152,9 @@ nav a {
   border: 1px solid var(--primary-text);
 }
 
-.card-content h3{
-  width: 100%;
-  padding: 10px 0;
+.card-content h3 {
+  width: 80%;
+  padding: 10px 0 15px 0;
   border-bottom: 1px solid var(--primary-text);
   margin: 0;
   text-align: center;
@@ -165,19 +163,20 @@ nav a {
 
 .card-content p{
   margin: 0;
-  padding: 10px 15px;
+  width: 80%;
+  padding: 10px 0;
   text-align: center;
-  min-height: 180px;
-  font-size: 16px;
+  min-height: 160px;
+  font-size: 14px;
   text-align: left;
   line-height: 1.5;
 }
 
 
 .card-image {
-  padding: 20px;
+  padding: 15px 20px;
   width: 100%;
-  border: 2px solid var(--primary-text);
+  border: 1px solid var(--primary-text);
   text-align: center;
   margin: 10px 0;
 }
@@ -200,8 +199,18 @@ footer {
     font-size: 16px;
   }
 
+  
+}
+
+@media screen and (min-width: 1024px) {
+  .body {
+    background-size: contain;
+  }
+}
+
+
+@media screen and (min-width: 1140px) {
   .cards-section {
     justify-content: center;
   }
-  
 }
