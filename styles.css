@@ -123,7 +123,6 @@ nav a {
   width: 100%;
   overflow-x: scroll;
   scroll-behavior: auto;
-  justify-content: center;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -194,11 +193,15 @@ footer {
 
 @media screen and (min-width: 768px) {
   .secondary-nav {
-    display: block;
+    display: flex;
   }
 
   nav a {
     font-size: 16px;
+  }
+
+  .cards-section {
+    justify-content: center;
   }
   
 }
