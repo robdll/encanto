@@ -1,17 +1,19 @@
 :root {
   --primary-background: #5a483a;
-  --secondary-background: #f0e6d2;
+  --secondary-background: #fff8e4;
   --secondary-text: white;
   --primary-text: #5a483a;
 }
 * {
   box-sizing: border-box;
+
 }
 
 body {
   font-family: 'Arial', sans-serif;
   color: #333;
   background: var(--secondary-background);
+  margin: 0;
 }
 
 nav {
@@ -47,6 +49,7 @@ nav a {
   color: var(--primary-text);
   text-decoration: none;
   font-weight: bold;
+  font-size: 12px;
 }
 
 .main {
@@ -54,7 +57,10 @@ nav a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url('./resources/bg.png') repeat;
+  justify-content: flex-start;
+  background-image: url('./resources/Encanto.png');
+  background-position: top;
+  background-size: cover;
 }
 
 .section {
@@ -63,8 +69,11 @@ nav a {
 
 .section.hero {
   max-width: 375px;
+  /* 
+  use img borders
   border-left: 1px solid var(--primary-text);
-  border-right: 1px solid var(--primary-text);
+  border-right: 1px solid var(--primary-text); 
+  */
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -111,16 +120,27 @@ nav a {
 .cards-section {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  overflow-x: scroll;
+  scroll-behavior: auto;
+  justify-content: center;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.cards-section::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
+  min-width: 275px;
   max-width: 270px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   display: flex;
   flex-direction: column;
   background-color: var(--secondary-background);
-  padding: 20px 10px;
+  margin: 20px 10px;
 }
 
 .card h2 {
@@ -156,7 +176,7 @@ nav a {
 
 
 .card-image {
-  padding: 25px;
+  padding: 20px;
   width: 100%;
   border: 2px solid var(--primary-text);
   text-align: center;
@@ -165,4 +185,20 @@ nav a {
 
 footer {
   font-size: 0.8em;
+}
+
+.secondary-nav {
+  display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+  .secondary-nav {
+    display: block;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+  
 }
